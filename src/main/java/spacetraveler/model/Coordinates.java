@@ -2,27 +2,27 @@ package spacetraveler.model;
 
 import java.util.Objects;
 
-public class Coordinate {
+public class Coordinates {
 
 	private int posX;
 	private int posY;
 
-	public Coordinate(int posX, int posY) {
+	public Coordinates(int posX, int posY) {
 		this.posX = posX;
 		this.posY = posY;
 	}
-	public Coordinate(){
+	public Coordinates(){
 		this.posX = 0;
 		this.posY = 0;
 	}
 
-	public int getDistance(Coordinate coordinate) {
-		return (int) Math.sqrt(Math.pow((coordinate.posX - this.posX),2)+Math.pow((coordinate.posY - this.posY),2));
+	public double getDistance(Coordinates coordinate) {
+		return  Math.sqrt(Math.pow((coordinate.posX - this.posX),2)+Math.pow((coordinate.posY - this.posY),2));
 	}
 
 	@Override
 	public String toString() {
-		return "Coordinate{" +
+		return "Coordinates{" +
 				"X : " + posX +
 				", Y :" + posY +
 				'}';
@@ -32,7 +32,7 @@ public class Coordinate {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		Coordinate that = (Coordinate) o;
+		Coordinates that = (Coordinates) o;
 		return posX == that.posX &&
 				posY == that.posY;
 	}

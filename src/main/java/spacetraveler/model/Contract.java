@@ -1,16 +1,23 @@
 package spacetraveler.model;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class Contract {
 
-	private List<ResourceSimple> resources;
+    public ArrayList<QuantityResource> resources;
 
-	public Contract(List<ResourceSimple> resources) {
-		this.resources = resources;
-	}
+    public Contract(ArrayList<QuantityResource> resources) {
+        this.resources = resources;
+    }
 
-	public List<ResourceSimple> getResources() {
-		return resources;
-	}
+    public int countResourceValidate(Player player) {
+        int count = 0;
+        for (QuantityResource r : resources) {
+            int index = player.resourcesGathered.indexOf(r);
+            if (index > -1 && player.resourcesGathered.get(index).quantity >= r.quantity)
+                count++;
+        }
+
+		return count;
+    }
 }

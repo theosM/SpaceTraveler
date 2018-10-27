@@ -12,7 +12,7 @@ public class Game {
 		this.player = player;
 	}
 
-	public void movePlayer(Coordinate coordinate) {
+	public void movePlayer(Coordinates coordinate) {
 		if(player.setCoordinate(coordinate)){
 			System.out.print("succeed");
 		}else{
@@ -31,7 +31,7 @@ public class Game {
 		throw new UnsupportedOperationException();
 	}
 
-	public Coordinate getCoorPlayer(){
+	public Coordinates getCoorPlayer(){
 		return player.coordinate;
 	}
 	public int getCarburantPlayer(){
